@@ -1,0 +1,26 @@
+<mat-toolbar>
+    <span>Add/Edit Category</span><br>
+    <span class="example-spacer"></span>
+    <button type="submit" (click)="onClick()" mat-mini-fab aria-label="Example icon button with a plus one icon">
+        <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+</mat-toolbar>
+
+<div fxLayoutAlign="25" fxFlexFill>
+    <mat-card fxFlex="">
+      <mat-card-header>Add Category</mat-card-header>
+      <mat-divider></mat-divider>
+      <form [formGroup]='editCategory' fxLayoutAlign="stretch" fxLayout="">
+        
+        <mat-form-field class=" col-6">
+          <input type="text" formControlName="categoryName" matInput placeholder="Category Name">
+        </mat-form-field>
+
+        <mat-form-field class=" col-6">
+          <input type="text" formControlName="description" matInput placeholder="Description">
+        </mat-form-field>
+        </form>
+      <br>
+      <button type="submit" (click)="onClick()" mat-raised-button class="btn btn-success" [disabled]="editCategory.invalid">Submit</button>
+    </mat-card>
+  </div>

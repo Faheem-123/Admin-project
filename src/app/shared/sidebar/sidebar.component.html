@@ -1,0 +1,51 @@
+<mat-toolbar>
+    <button mat-raised-button (click)="opened=!opened"class="example-icon mr-3">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Survey Wings</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button>
+      <mat-icon>crop_free</mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon>person</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+      <mat-nav-list> 
+        <a class="color" mat-list-item routerLink=""> <mat-icon>email</mat-icon>Email Template</a>
+        <a  class="color" mat-list-item [routerLink]="['/network']"> <mat-icon>wifi</mat-icon>Networks</a>
+        <mat-divider></mat-divider>
+        <a class="color" mat-list-item  [matMenuTriggerFor]="offer"><mat-icon class="mr-4">list</mat-icon>Offers<mat-icon class="pl-5">arrow_drop_down</mat-icon></a>
+        <mat-menu #offer>
+        <a mat-menu-item [routerLink]="['/offer-category']">offer-category</a>
+        <a mat-menu-item [routerLink]="['/offer']">offer 1</a>
+        </mat-menu>
+
+        <a class="color" mat-list-item routerLink=""><mat-icon>people</mat-icon>Source</a>
+        <mat-divider></mat-divider>
+        <a class="color" mat-list-item  [matMenuTriggerFor]="survey"><mat-icon class="mr-4">list</mat-icon>Surveys<mat-icon class="pl-5">arrow_drop_down</mat-icon></a>
+        <mat-menu #survey>
+        <a mat-menu-item routerLink="">survey 1</a>
+        <a mat-menu-item routerLink="">survey 2</a>
+        </mat-menu>
+
+        <mat-divider></mat-divider>
+        <a class="color" mat-list-item routerLink=""> <mat-icon>email</mat-icon>Trigger Emails</a>
+        <a class="color" mat-list-item routerLink=""> <mat-icon> list_alt</mat-icon>Payment Request</a>
+        
+        <a class="color" mat-list-item  [matMenuTriggerFor]="report"><mat-icon class="mr-4">list</mat-icon>Reports<mat-icon class="pl-5">arrow_drop_down</mat-icon></a>
+        <mat-menu #report>
+        <a mat-menu-item routerLink="">report 1</a>
+        <a mat-menu-item routerLink="">report 2</a>
+        </mat-menu>
+
+        <a class="color" mat-list-item routerLink=""><mat-icon> list_alt</mat-icon>CSV Upload</a>
+      </mat-nav-list>
+    </mat-sidenav>
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>

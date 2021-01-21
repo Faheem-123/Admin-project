@@ -1,0 +1,23 @@
+mat-sidenav-container{
+height: 550px;
+color: cornsilk;
+}
+mat-sidenav,mat-sidenav-content{
+    padding: 16px;
+    
+}
+mat-sidenav{
+    width: 250px;
+    background-color:#3F5185;
+    color: cornsilk;
+}
+mat-icon{
+    vertical-align: middle;
+    margin-right: 20px;
+}
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .color{
+      color: cornsilk;
+  }

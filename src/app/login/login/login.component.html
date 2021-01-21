@@ -1,0 +1,22 @@
+<div fxLayoutAlign="center" fxFlexFill class='main'>
+  <mat-card fxFlex="40">
+    <mat-card-header>Sign in with your app id to continue</mat-card-header>
+    <form [formGroup]='loginForm' fxLayoutAlign="stretch" fxLayout="column">
+      <mat-form-field>
+        <input formControlName="email" matInput placeholder="Email">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="password" formControlName="password" matInput placeholder="Password">
+      </mat-form-field>
+      <label class="side">
+        <input type="checkbox" formControlName="checkbox">Stay logged in</label>
+      </form>
+    <br>
+    <button type="submit" (click)="onClick()" mat-raised-button class="btn btn-success">login</button>
+  </mat-card>
+</div>
+<div style="background-color:#3F5185">
+  <footer>
+    <p>&copy;<i>copyright</i> 2020</p>
+  </footer>
+</div>
